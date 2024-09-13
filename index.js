@@ -24,19 +24,16 @@ function displayMenuItems(menu) {
         menuContainer.appendChild(itemsList);
         // Loop through the items in the category and create list items
         for (let i = 0; i < menu[category].length; i++) {
+            
             const item = menu[category][i];
             // Create a list item element
             const listItem = document.createElement('li');
-
+            // Set the text content of the list item element to the item name
             listItem.textContent = `${item.name} - R${item.price.toFixed(2)}`;
             // Attach a click event listener to the list item to add it to the order
             listItem.addEventListener('click', () => addToOrder(item));
             // Append the list item to the list of items
             itemsList.appendChild(listItem);        
-            
-
-            // Set the text content of the list item element to the item name
-    
         }
     }        
 }
@@ -61,10 +58,25 @@ function addToOrder(item) {
     // Update the text content of the order total element with the new total
     updateFinalPrice(newTotal); // Included a gratuity, one of those stingy resturants
 }
+// Function to update the final price
+function updateFinalPrice(total) {
+    const finalPriceElement = document.getElementById('final-price');
+    const gratuity = 0.15 * total;
+    const finalPrice = total + gratuity;
+    //What if final price element doesn't exist in the html?
+    if (!finalPriceElement) {
+        finalPriceElement = document.createElement('p');
+        finalPriceElement.id = 'final-price';
+        document.getElementById('order').appendChild(finalPriceElement);
+    }
+    // Update the text content of the final price element with the final price 
+    finalPriceElement.textContent = `R${finalPrice.toFixed(2)}`;
+}
 
 // Function to initialize the menu system
 function initMenuSystem(menu) {
     // Call the function to display menu items
+    displayMenuItems(menu);
 }
 
 // Start the menu system by calling the init function
