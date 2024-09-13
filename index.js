@@ -17,21 +17,27 @@ function displayMenuItems(menu) {
         // Set the text content of the category element to the category name
 
         // Append the category element to the menu container
-
+        menuContainer.appendChild(categoryElement);
         // Create an element to represent a list of items
-
+        const itemsList = document.createElement('ul');
         // Append a list of items element to the menu container
 
         // Loop through the items in the category and create list items
-
+        for (let i = 0; i < menu[category].length; i++) {
+            const item = menu[category][i];
+            const listItem = document.createElement('li');
+            
+            listItem.textContent = `${item.name} - R${item.price.toFixed(2)}`;
+            // Attach a click event listener to the list item to add it to the order
+            listItem.addEventListener('click', () => addToOrder(item));
+            // Append the list item to the list of items
+            itemsList.appendChild(listItem);        
             // Create a list item element
 
             // Set the text content of the list item element to the item name
-
-            // Attach a click event listener to the list item to add it to the order
-
-            // Append the list item to the list of item
-    }        
+    
+        }
+}        
 }
 
 // Callback function for adding an item to the order
