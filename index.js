@@ -1,8 +1,8 @@
 // Sample menu data (Consider fetching this data from a server in a real-world scenario)
 const menu = {
-    Starters: ["Garlic Bread", "Bruschetta"],
-    MainCourses: ["Margherita Pizza", "Spaghetti Carbonara"],
-    Desserts: ["Tiramisu", "Cheesecake"]
+    Starters: ["Garlic Bread", "Bruschetta", "Meatballs", "Beef Skewers", "Mushroom Soup & Garlic Bread"],
+    MainCourses: ["Margherita Pizza", "Spaghetti Carbonara", "Steak Fillet", "Salmon &  Pesto Pasta"],
+    Desserts: ["Tiramisu", "Cheesecake", "Waffles & Cream", "Lemon Sorbet"]
 };
 
 // Function to display menu items by category
