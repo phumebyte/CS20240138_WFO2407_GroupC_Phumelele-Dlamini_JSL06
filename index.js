@@ -8,11 +8,12 @@ const menu = {
 // Function to display menu items by category
 function displayMenuItems(menu) {
     // Get the menu container element from the HTML
-
+    const menuContainer = document.getElementById('menu');
     // Loop through each category and its items in the menu object
-
+    for (const category in menu) {
         // Create an element to represent the category
-
+        const categoryElement = document.createElement('h3');
+        categoryElement.textContent = category;
         // Set the text content of the category element to the category name
 
         // Append the category element to the menu container
@@ -29,9 +30,8 @@ function displayMenuItems(menu) {
 
             // Attach a click event listener to the list item to add it to the order
 
-            // Append the list item to the list of items
-
-            
+            // Append the list item to the list of item
+    }        
 }
 
 // Callback function for adding an item to the order
