@@ -21,12 +21,12 @@ function displayMenuItems(menu) {
         // Create an element to represent a list of items
         const itemsList = document.createElement('ul');
         // Append a list of items element to the menu container
-
+        menuContainer.appendChild(itemsList);
         // Loop through the items in the category and create list items
         for (let i = 0; i < menu[category].length; i++) {
             const item = menu[category][i];
             const listItem = document.createElement('li');
-            
+
             listItem.textContent = `${item.name} - R${item.price.toFixed(2)}`;
             // Attach a click event listener to the list item to add it to the order
             listItem.addEventListener('click', () => addToOrder(item));
@@ -37,13 +37,14 @@ function displayMenuItems(menu) {
             // Set the text content of the list item element to the item name
     
         }
-}        
+    }        
 }
 
 // Callback function for adding an item to the order
-function addToOrder(itemName) {
+function addToOrder(item) {
     // Get the order items list and the order total element from the HTML
-
+    const orderItemsList = document.getElementById('order-items');
+    const orderTotalElement = document.getElementById('order-total');
     // Create a list item for the order
 
     // Set the text content of the list item to the item name
