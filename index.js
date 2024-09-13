@@ -25,6 +25,7 @@ function displayMenuItems(menu) {
         // Loop through the items in the category and create list items
         for (let i = 0; i < menu[category].length; i++) {
             const item = menu[category][i];
+            // Create a list item element
             const listItem = document.createElement('li');
 
             listItem.textContent = `${item.name} - R${item.price.toFixed(2)}`;
@@ -32,7 +33,7 @@ function displayMenuItems(menu) {
             listItem.addEventListener('click', () => addToOrder(item));
             // Append the list item to the list of items
             itemsList.appendChild(listItem);        
-            // Create a list item element
+            
 
             // Set the text content of the list item element to the item name
     
@@ -46,14 +47,19 @@ function addToOrder(item) {
     const orderItemsList = document.getElementById('order-items');
     const orderTotalElement = document.getElementById('order-total');
     // Create a list item for the order
-
+    const orderItem = document.createElement('li');
+    orderItem.textContent = `${item.name} - R${item.price.toFixed(2)}`;
     // Set the text content of the list item to the item name
 
     // Append the list item to the order items list
-
+    orderItemsList.appendChild(orderItem);
     // Calculate and update the total price
-
+    let currentTotal = parseFloat(orderTotalElement.textContent);
+    const newTotal = currentTotal + item.price;
+    orderTotalElement.textContent = newTotal.toFixed(2);
+    
     // Update the text content of the order total element with the new total
+    updateFinalPrice(newTotal); // Included a gratuity, one of those stingy resturants
 }
 
 // Function to initialize the menu system
