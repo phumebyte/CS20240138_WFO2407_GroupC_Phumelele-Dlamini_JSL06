@@ -1,3 +1,5 @@
+## From the Author
+In this submission, I created a digital resturant menu that allows customers to add items to their "cart" by clicking on the item and tally up the order (and add a 10% gratuity too!). I implemenred additional features such as the price of the items, a subtotal display and a total price including the gratuity. 
 # [JSL06] Submission: CodeCuisine Menu Display System Challenge
 
 You will:
